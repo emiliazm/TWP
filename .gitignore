@@ -1,0 +1,9 @@
+# build
+build
+
+# dependencies
+node_modules
+
+# private informations
+.secret
+.env
