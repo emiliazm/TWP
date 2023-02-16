@@ -32,6 +32,7 @@ module.exports = {
   plugins: ["truffle-plugin-verify"],
   api_keys: {
     etherscan: process.env.ETHERSCAN_APY_KEY,
+    polygonscan: process.env.POLYGONSCAN_APY_KEY,
   },
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -95,6 +96,18 @@ module.exports = {
         return new HDWalletProvider(mnemonic, process.env.ETHEREUM_MAINNET_RPC);
       },
       network_id: 5,
+    },
+    polygon: {
+      provider: function () {
+        return new HDWalletProvider(mnemonic, process.env.POLYGON_MAINNET_RPC);
+      },
+      network_id: 137,
+      // confirmations: 20,
+      // skipDryRun: true,
+      // gas: 18878420,
+      gasPrice: 545900000000,
+      // networkCheckTimeout: 10000000,
+      // timeoutBlocks: 200
     },
   },
 
