@@ -1,5 +1,5 @@
-const TakyonWP = artifacts.require("TakyonWP");
+const TakyonDocuments = artifacts.require("TakyonDocuments");
 
 module.exports = function (deployer) {
-  deployer.deploy(TakyonWP);
+  deployer.deploy(TakyonDocuments);
 };

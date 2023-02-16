@@ -4,17 +4,13 @@ pragma solidity ^0.8.9;
 import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract TakyonWP is ERC721A, Ownable {
-    uint256 MAX_SUPPLY = 1;
+contract TakyonDocuments is ERC721A, Ownable {
     string private _customBaseURI;
 
-    constructor() ERC721A("TakyonWP", "TWP") {}
+    constructor() ERC721A("TakyonDocuments", "TDCS") {}
 
-    function mint(address to) public onlyOwner {
-        uint256 tokenId = totalSupply();
-        require(tokenId < MAX_SUPPLY, "Max amount of mint reached");
-        tokenId += 1;
-        _safeMint(to, tokenId);
+    function mint(address to_) public onlyOwner {
+        _safeMint(to_, 1);
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
